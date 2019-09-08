@@ -1,0 +1,52 @@
+
+<div class="taskbook-block">
+
+<div class="taskbook-input-block">
+  <form #f="ngForm" class="example-form" (ngSubmit)="onSubmit(f)" >
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Your task"  ngModel required #first="ngModel" name="task">
+    </mat-form-field>
+    <button mat-raised-button color="accent">Push</button>
+  </form>
+</div>
+
+<div class="taskbook-table-block">
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="task">
+      <mat-header-cell *matHeaderCellDef> Task </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.task}} </mat-cell>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="done">
+      <mat-header-cell *matHeaderCellDef> Done </mat-header-cell>
+      <mat-cell *matCellDef="let element"> 
+        <mat-radio-group aria-label="Select an option">
+          <mat-checkbox class="example-margin" [(ngModel)]="element.done">Done</mat-checkbox>
+        </mat-radio-group>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let element">
+          <button mat-raised-button color="accent">Delete</button>
+      </mat-cell>
+    </ng-container>  
+      
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
+</div>
