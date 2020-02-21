@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatSliderModule } from '@angular/material/slider';
-import { LoginComponent } from './login.component';
+import { LoginComponent } from './components/login/login.component';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MaterialModulev } from '../../material.module';
 
 
 @NgModule({
@@ -11,7 +10,7 @@ import { BrowserModule } from '@angular/platform-browser';
   imports: [
     CommonModule,
     BrowserModule,
-    MatSliderModule,
+    MaterialModulev,
   ],
   exports: [ LoginComponent ]
 })
