@@ -3,7 +3,12 @@
         <app-menu></app-menu>
         <span>My Notebook</span>
         <span class="example-spacer"></span>
-        <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">person</mat-icon>
-        <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">person_add</mat-icon>
+        <button routerLink="/login" mat-icon-button aria-label="Example icon-button with a heart icon">
+            <mat-icon>person</mat-icon>
+        </button>
+        <button routerLink="/registration" mat-icon-button aria-label="Example icon-button with a heart icon">
+            <mat-icon>person_add</mat-icon>
+        </button>
     </mat-toolbar-row>
 </mat-toolbar>
+

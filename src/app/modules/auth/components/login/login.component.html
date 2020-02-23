@@ -1,0 +1,23 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Аuthorization</mat-card-title>
+  </mat-card-header>
+  <form class="example-form" [formGroup]="loginForm">
+    <mat-form-field class="example-full-width">
+        <mat-label>Enter your email</mat-label>
+        <input matInput  placeholder="pat@example.com" formControlName="email" required>
+        <mat-error *ngIf="f.email.hasError('required')">You must enter a value</mat-error>
+        <mat-error *ngIf="f.email.hasError('email')">Not a valid email</mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Enter your password</mat-label>
+        <input matInput autocomplete="on" formControlName="password" [type]="hide ? 'password' : 'text'" required>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="f.password.hasError('required')">You must enter a value</mat-error>
+        <mat-error *ngIf="f.password.hasError('minlength')">Password must be at least 6 characters</mat-error>
+    </mat-form-field>
+    <button mat-button type="submit" (click)="onSubmit()" [disabled]="loginForm.invalid" color="primary">Sing In</button>
+  </form>
+</mat-card>
