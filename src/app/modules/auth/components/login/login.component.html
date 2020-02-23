@@ -1,9 +1,18 @@
-<div class="login-template">
-    <div class="example-container">
-        <mat-form-field appearance="fill">
-          <mat-label>Enter your email</mat-label>
-          <input matInput placeholder="pat@example.com" [formControl]="email" required>
-          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
-      </div>
-</div>
+<mat-card class="example-card">
+  <form class="example-form" [formGroup]="loginForm" (submit)="submit()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Enter your email</mat-label>
+      <input matInput  placeholder="pat@example.com" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Enter your password</mat-label>
+      <input matInput autocomplete="on" [formControl]="password" [type]="hide ? 'password' : 'text'" required>
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="password.invalid">{{getErrorMessagePassword()}}</mat-error>
+    </mat-form-field>
+    <button mat-button [disabled]="loginForm.invalid" color="primary">Sing In</button>
+  </form>
+</mat-card>

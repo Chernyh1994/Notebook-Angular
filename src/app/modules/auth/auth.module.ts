@@ -5,10 +5,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModulev } from '../../material.module';
 import { AuthRoutingModule } from './auth-router.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { RegistrationComponent } from './components/registration/registration.component';
+
 
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, RegistrationComponent],
   imports: [
     CommonModule,
     BrowserModule,

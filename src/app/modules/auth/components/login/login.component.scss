@@ -1,9 +1,17 @@
+.example-card {
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
 .example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
+  width: auto;
+}
+
+.example-full-width {
+  width: 90%;
+  padding: 10px;
+}
