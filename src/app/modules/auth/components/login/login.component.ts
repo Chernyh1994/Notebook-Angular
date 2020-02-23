@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormControl, NgForm, FormGroup } from '@angular/forms';
+import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 
 
 @Component({
@@ -9,32 +9,26 @@ import { Validators, FormControl, NgForm, FormGroup } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
-
+  loginForm: FormGroup;
   hide = true;
-  email = new FormControl('', [Validators.required, Validators.email]);
-  password = new FormControl('', [Validators.required]);
 
-  public loginForm: FormGroup = new FormGroup({
-    email: this.email,
-    password: this.password
-  });
-
-  getErrorMessageEmail(): string {
-    return this.email.hasError('required') ? 'You must enter a value' :
-        this.email.hasError('email') ? 'Not a valid email' : '';
-  }
-
-  getErrorMessagePassword(): string {
-    return this.password.hasError('required') ? 'You must enter a value' :
-    '';
-  }
-
-  submit() {
-    console.log(this.loginForm.value);
+  constructor(private formBuilder: FormBuilder) {
+    this.loginForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+    });
   }
 
   ngOnInit(): void {
   }
+  get f() { return this.loginForm.controls; }
+
+  onSubmit() {
+    if (this.loginForm.invalid) {
+        return;
+    }
+    console.log('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value, null, 2));
+  }
+
 
 }
