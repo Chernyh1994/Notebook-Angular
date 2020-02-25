@@ -1,0 +1,11 @@
+<div class="masonry-demo">
+  <ngx-masonry [options]="masonryOptions" [useImagesLoaded]="true" class="masonry-ngx" >
+    <div ngxMasonryItem class="masonry-item" *ngFor="let picture of masonryImages">
+        <button mat-button>
+            <img src="{{picture.picture}}">
+        </button>
+    </div>
+  </ngx-masonry>
+  <button mat-button *ngIf="limit < 100" (click)="showMoreImages()" color="primary">Show More</button>
+  <h2 *ngIf="limit >= 100">No More Images</h2>
+</div>

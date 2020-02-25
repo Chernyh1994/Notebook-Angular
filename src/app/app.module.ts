@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavigationModule } from './modules/navigation/navigation.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { MainModule } from './modules/main/main.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AuthModule } from './modules/auth/auth.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     NavigationModule,
-    AuthModule
+    AuthModule,
+    MainModule
   ],
   providers: [],
   bootstrap: [AppComponent]

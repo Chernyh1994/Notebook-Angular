@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavigationComponent } from './components/navigation/navigation.component';
-import { MaterialModulev } from '../../material.module';
-import { MenuComponent } from './components/menu/menu.component';
 import { RouterModule } from '@angular/router';
+import { MaterialModulev } from '../../material.module';
+
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 
 @NgModule({
