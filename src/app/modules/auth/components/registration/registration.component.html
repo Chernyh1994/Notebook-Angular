@@ -34,7 +34,7 @@
             <mat-error  *ngIf="f.confirmPassword.hasError('mustMatch')">Passwords must match</mat-error >       
         </mat-form-field>
         <button mat-button type="submit" (click)="onSubmit()" [disabled]="registerForm.invalid" color="primary">Register</button>
-        <button mat-button routerLink="/home" color="primary">Cancel</button>
+        <button mat-button routerLink="/" color="primary">Cancel</button>
     </form>
   </mat-card>
 

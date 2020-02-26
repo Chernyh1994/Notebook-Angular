@@ -2,16 +2,16 @@
     <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button routerLink="/home" mat-menu-item>
+    <button routerLink="/" mat-menu-item>
       <mat-icon>home</mat-icon>
       <span>Home</span>
     </button>
     <button mat-menu-item>
       <mat-icon>book</mat-icon>
-      <span>Nootebook</span>
+      <span>Books</span>
     </button>
-    <button mat-menu-item>
-      <mat-icon>error</mat-icon>
-      <span>Test 2</span>
+    <button routerLink="/addBook" mat-menu-item>
+      <mat-icon>bookmarks</mat-icon>
+      <span>Add Book</span>
     </button>
   </mat-menu>

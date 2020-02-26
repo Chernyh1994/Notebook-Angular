@@ -1,0 +1,20 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>New Book</mat-card-title>
+    </mat-card-header>
+    <form class="example-form" [formGroup]="newBookForm" >
+        <mat-form-field class="example-full-width">
+            <mat-label>Name language</mat-label>
+            <input matInput placeholder="Java Script" formControlName="nameBook">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Img Logo URL</mat-label>
+            <input matInput placeholder="https://www.JS.img" formControlName="aboutBook">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Text</mat-label>
+            <textarea matInput placeholder="JavaScript, often abbreviated as JS, is..." formControlName="imgURL"></textarea>
+        </mat-form-field>
+        <button mat-button (click)="onSubmit(newBookForm.value)" color="primary">Submit</button>
+    </form>
+  </mat-card>
