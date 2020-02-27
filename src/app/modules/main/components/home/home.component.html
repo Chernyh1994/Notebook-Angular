@@ -1,8 +1,8 @@
 <div class="masonry-demo">
   <ngx-masonry [options]="masonryOptions" [useImagesLoaded]="true" class="masonry-ngx" >
-    <div ngxMasonryItem class="masonry-item" *ngFor="let picture of masonryImages">
-        <button mat-button>
-            <img src="{{picture.picture}}">
+    <div ngxMasonryItem class="masonry-item" *ngFor="let picture of dummyPictures">
+        <button routerLink="/details/{{picture.id}}" mat-button>
+            <img title="{{picture.nameBook}}" src="{{picture.imgURL}}">
         </button>
     </div>
   </ngx-masonry>

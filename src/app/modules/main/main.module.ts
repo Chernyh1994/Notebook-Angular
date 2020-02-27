@@ -7,17 +7,18 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { MainRoutingModule } from './main-router.module';
 import { AddBookComponent } from './components/addBook/add-book.component';
+import { DetailBookComponent } from './components/detailBook/detail-book.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, AddBookComponent],
+  declarations: [HomeComponent, AddBookComponent, DetailBookComponent],
   imports: [
     CommonModule,
     MaterialModulev,
     NgxMasonryModule,
     MainRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [HomeComponent]
 
